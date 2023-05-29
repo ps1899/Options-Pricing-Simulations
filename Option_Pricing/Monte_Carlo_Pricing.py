@@ -15,7 +15,7 @@ class Monte_Carlo_Pricing(OptionPricingModel):
         self.dT = self.T/self.noOfSteps
 
     def simulatePrices(self):
-        np.randon.seed(20)
+        np.random.seed(20)
         self.simulationResults = None
         sim = np.zeros((self.noOfSteps, self.N))
         sim[0] = self.S
