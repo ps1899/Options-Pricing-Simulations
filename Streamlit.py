@@ -1,11 +1,8 @@
 from enum import Enum
 from datetime import datetime, timedelta
 import streamlit as st
-from .Binomial_Tree_Pricing import Binomial_Tree_Pricing
-from .Black_Scholes_Pricing import Black_Scholes_Pricing
-from .Monte_Carlo_Pricing import Monte_Carlo_Pricing
-from .Ticker import Ticker
-from .Base import OptionPricingModel
+from Option_Pricing import Black_Scholes_Pricing, Binomial_Tree_Pricing, Monte_Carlo_Pricing, Ticker
+from Option_Pricing.Base import OptionPricingModel
 
 class OptionPricingModel(Enum):
     blackScholes = 'Black Scholes Model'
@@ -97,8 +94,8 @@ class OptionPricingModel(Enum):
         SigmaBT = sigmaBT/100
         daysToMatureBT = (exerciseDataBT - datetime.now().date()).days
 
-        callOptionPriceBT = Binomial_Tree_Pricing(spotPriceBT, strikePriceBT, daysToMatureBT, riskFreeRateBT, sigmaBT, noOfStepsBT).calculate_option_price('Call Option')
-        putOptionPriceBT =  Binomial_Tree_Pricing(spotPriceBT, strikePriceBT, daysToMatureBT, riskFreeRateBT, sigmaBT, noOfStepsBT).calculate_option_price('Put Option')
+        callOptionPriceBT = Binomial_Tree_Pricing(spotPriceBT, strikePriceBT, daysToMatureBT, RiskFreeRateBT, SigmaBT, noOfStepsBT).calculate_option_price('Call Option')
+        putOptionPriceBT =  Binomial_Tree_Pricing(spotPriceBT, strikePriceBT, daysToMatureBT, RiskFreeRateBT, SigmaBT, noOfStepsBT).calculate_option_price('Put Option')
 
         st.subheader(f'Call Option price: {callOptionPriceBT}')
         st.subheader(f'Put Option price: {putOptionPriceBT}')

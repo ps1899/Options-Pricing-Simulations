@@ -1,7 +1,4 @@
-from .Binomial_Tree_Pricing import Binomial_Tree_Pricing
-from .Black_Scholes_Pricing import Black_Scholes_Pricing
-from .Monte_Carlo_Pricing import Monte_Carlo_Pricing
-from .Ticker import Ticker
+from Option_Pricing import Black_Scholes_Pricing, Binomial_Tree_Pricing, Monte_Carlo_Pricing, Ticker
 
 data = Ticker.getHistoricalData('TSLA')
 print(Ticker.getHistoricalData(data))
