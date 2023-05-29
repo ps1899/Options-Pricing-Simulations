@@ -3,7 +3,7 @@ from scipy.stats import norm
 from .Base import OptionPricingModel
 
 class Binomial_Tree_Pricing(OptionPricingModel):
-    def __init__(self, underlyingSpotPrice, strikePrice, daysToMature, riskFreeRate, sigma, timeSteps) -> None:
+    def __init__(self, underlyingSpotPrice, strikePrice, daysToMature, riskFreeRate, sigma, timeSteps):
         self.S = underlyingSpotPrice
         self.K = strikePrice
         self.T = daysToMature/365

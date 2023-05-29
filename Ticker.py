@@ -15,7 +15,7 @@ class Ticker:
                 data = wb.DataReader(ticker, dataSource = 'yahoo', start = startDate, end = endDate, session = session)
             else:
                 data = wb.DataReader(ticker, dataSource = 'yahoo', session = session)
-
+    
             if data is None:
                 return None
             return data
@@ -29,6 +29,14 @@ class Ticker:
         if(data is None):
             return None
         return [column for column in data.columns]
+    
+    @staticmethod
+    def getLastPrice(data, columnName):
+        if data is None or columnName is None:
+            return None
+        if columnName not in Ticker.getColumns(data):
+            return None
+        return data[columnName].iloc[len(data) - 1]
     
     @staticmethod
     def plotData(data, ticker, columnName):
