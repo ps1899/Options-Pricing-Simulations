@@ -28,7 +28,9 @@ class Ticker:
             session = requests_cache.CachedSession(cache_name='cache', backend='sqlite', expire_after=expire_after)
 
             # Adding headers to session
-            session.headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0', 'Accept': 'application/json;charset=utf-8'}  # noqa
+            session.headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0', 
+                               'Accept': 'application/json;charset=utf-8'
+                              }
             
             # if start_date is not None and end_date is not None:
             #     data = wb.DataReader(ticker, data_source='yahoo', start=start_date, end=end_date, session=session)

@@ -57,6 +57,7 @@ class BlackScholesModel(OptionPricingModel):
         d1 = (np.log(self.S / self.K) + (self.r + 0.5 * self.sigma ** 2) * self.T) / (self.sigma * np.sqrt(self.T))
 
         # cumulative function of standard normal distribution (probability of receiving the stock at expiration of the option)
+        # d2 = (d1 - (sigma * sqrt(T)))
         d2 = (np.log(self.S / self.K) + (self.r - 0.5 * self.sigma ** 2) * self.T) / (self.sigma * np.sqrt(self.T))
         
         return (self.K * np.exp(-self.r * self.T) * norm.cdf(-d2, 0.0, 1.0) - self.S * norm.cdf(-d1, 0.0, 1.0))
