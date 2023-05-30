@@ -1,7 +1,5 @@
-# Standard library imports
+# Library imports
 import datetime
-
-# Third party imports
 import requests_cache
 import matplotlib.pyplot as plt
 from pandas_datareader import data as wb
@@ -32,18 +30,15 @@ class Ticker:
                                'Accept': 'application/json;charset=utf-8'
                               }
             
-            # if start_date is not None and end_date is not None:
-            #     data = wb.DataReader(ticker, data_source='yahoo', start=start_date, end=end_date, session=session)
-            # else:
-            #     data = wb.DataReader(ticker, data_source='yahoo', session=session)   #['Adj Close']
-
             if(start_date is not None and end_date is not None):
                 data = yf.download(ticker, start = start_date, end = end_date)
             else:
                 data = yf.download(ticker)
+
             if data is None:
                 return None
             return data
+        
         except Exception as e:
             print(e)
             return None
@@ -94,6 +89,7 @@ class Ticker:
             plt.title(f'Historical data for {ticker} - {column_name}')
             plt.legend(loc='best')
             plt.show()
+
         except Exception as e:
             print(e)
             return

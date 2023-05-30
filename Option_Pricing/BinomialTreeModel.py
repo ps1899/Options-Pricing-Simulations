@@ -1,8 +1,6 @@
-# Third party imports
+# Imports
 import numpy as np
 from scipy.stats import norm 
-
-# Local package imports
 from .base import OptionPricingModel
 
 
@@ -50,13 +48,11 @@ class BinomialTreeModel(OptionPricingModel):
         a = np.exp(self.r * dT)      # risk free compounded return
         p = (a - d) / (u - d)        # risk neutral up probability
         q = 1.0 - p                  # risk neutral down probability   
-
         V[:] = np.maximum(S_T - self.K, 0.0)
     
         # Overriding option price 
         for i in range(self.number_of_time_steps - 1, -1, -1):
-            V[:-1] = np.exp(-self.r * dT) * (p * V[1:] + q * V[:-1]) 
-
+            V[:-1] = np.exp(-self.r * dT) * (p * V[1:] + q * V[:-1])
         return V[0]
 
     def _calculate_put_option_price(self): 
@@ -75,11 +71,9 @@ class BinomialTreeModel(OptionPricingModel):
         a = np.exp(self.r * dT)      # risk free compounded return
         p = (a - d) / (u - d)        # risk neutral up probability
         q = 1.0 - p                  # risk neutral down probability   
-
         V[:] = np.maximum(self.K - S_T, 0.0)
     
         # Overriding option price 
         for i in range(self.number_of_time_steps - 1, -1, -1):
-            V[:-1] = np.exp(-self.r * dT) * (p * V[1:] + q * V[:-1]) 
-
+            V[:-1] = np.exp(-self.r * dT) * (p * V[1:] + q * V[:-1])
         return V[0]
