@@ -22,30 +22,29 @@ When data is fetched from Yahoo Finance API, it's cached with [request-cache](ht
 
 ## Streamlit web app
 
-1. Black-Scholes Option Pricing 
+1. Black-Scholes Option Pricing
 
-![black-scholes-demo](./demo/streamlit-webapp-BS.gif) 
+![black-scholes-demo](./demo/streamlit-webapp-BS.gif)
 
-2. Monte Carlo Option Pricing 
+2. Monte Carlo Option Pricing
 
-![monte-carlo-demo](./demo/streamlit-webapp-MC.gif) 
+![monte-carlo-demo](./demo/streamlit-webapp-MC.gif)
 
-3. Binomial Tree Option Pricing 
+3. Binomial Tree Option Pricing
 
-![binomial-tree-demo](./demo/streamlit-webapp-BC.gif) 
-
+![binomial-tree-demo](./demo/streamlit-webapp-BC.gif)
 
 ## Project structure
 
-| Files | Description |
-| ----------- | ----------- |
-| `demo` | contains .gif files as example of streamlit app. |
-| `option_pricing` | folder containing python packages where models are implemented. |
+| Files                      | Description                                                      |
+| -------------------------- | ---------------------------------------------------------------- |
+| `demo`                   | contains .gif files as example of streamlit app.                 |
+| `option_pricing`         | folder containing python packages where models are implemented.  |
 | `option_pricing_test.py` | example code for testing option pricing models (without webapp). |
-| `streamlit_app.py` | web app for testing models using streamlit library. |
-| `Requirements.txt` | python pip package requirements. |
-| `Dockerfile` | for running containerized streamlit web app. |
-| `app.yaml` | for deploying dockerized app on GCP(Google Cloud Platform). |
+| `streamlit_app.py`       | web app for testing models using streamlit library.              |
+| `Requirements.txt`       | python pip package requirements.                                 |
+| `Dockerfile`             | for running containerized streamlit web app.                     |
+| `app.yaml`               | for deploying dockerized app on GCP(Google Cloud Platform).      |
 
 ## How to run code?
 
@@ -80,7 +79,7 @@ To change/set project use:
 When you have correct project in use for Cloud SDK, now you can deploy it using following command (it will use .yaml file from project structure as instructiong on how to deploy it):
 `gcloud app deploy`
 After choosing neared physical server to host your app, you will have to wait a bit for whole process to finish. Once everything is over, you will be prompted with a link to your web app (you can check that on Developer console as well).
-Link for your webb app will be something like this: `https://project-name.ey.r.appspot.com/`.
+Link for your web app will be something like this: `https://project-name.ey.r.appspot.com/`.
 
 ### **2. Running Streamlit app locally with python**
 
