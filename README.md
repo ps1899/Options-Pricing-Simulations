@@ -51,30 +51,30 @@ When data is fetched from Yahoo Finance API, it's cached with [request-cache](ht
 
 You can use simple streamlit web app to test option pricing models either by manually setting up python environment and running streamlit app or by running docker container.
 
-### **1. Running docker container**
+### **1. Running Docker container**
 
-Dockerfile has exposed 8080 (default web browser port), so when you deploy it to some cloud provider, it would be automatically possible to access your recently deployed webb app through browser.
+Dockerfile has exposed 8080 (default web browser port), so when you deploy it to some cloud provider, it would be automatically possible to access your recently deployed web app through browser.
 
-***1.1 Running docker container locally***
+***1.1 Running Docker container locally***
 First you will need to build the docker image (this may take a while, because it's downloading all the python libraries from Requirements.txt file) and specify tag e.g. option-pricing:initial:
 `docker build -t option-pricing:initial .`
 
 When image is built, you can execute following command, that lists all docker images, to check if image was successfully build:
 `docker image ls`
 
-Now, you can run docker container with following command:
+Now, you can run Docker container with following command:
 `docker run -p 8080:8080 option-pricing:initial`
 
 When you see output in command line that streamlit app is running on port 8080, you can access it with browser:
 `http://localhost:8080/`
 
-***1.2 Deploying docker container to Google Cloud Platform***
+***1.2 Deploying Docker container to Google Cloud Platform***
 Before you deploy to GCP, please make sure you have google acount, created project on Google Developer Console, set up the billing method (please make sure you understand how Google is charging for hosting!) and downloaded [Google Cloud SDK](https://cloud.google.com/sdk/docs/quickstarts).
 
-To chech which project (one from list of projects created on Google Developer Console) is currently used with Google Cloud SDK, use:
+To check which project (one from list of projects created on Google Developer Console) is currently used with Google Cloud SDK, use:
 `gcloud config get-value project`
 
-To chage/set project use:
+To change/set project use:
 `gcloud config set project project-name`
 
 When you have correct project in use for Cloud SDK, now you can deploy it using following command (it will use .yaml file from project structure as instructiong on how to deploy it):
@@ -82,7 +82,7 @@ When you have correct project in use for Cloud SDK, now you can deploy it using 
 After choosing neared physical server to host your app, you will have to wait a bit for whole process to finish. Once everything is over, you will be prompted with a link to your web app (you can check that on Developer console as well).
 Link for your webb app will be something like this: `https://project-name.ey.r.appspot.com/`.
 
-### **2. Running streamlit app locally with python**
+### **2. Running Streamlit app locally with python**
 
 It is recommended that you create new [virtual environment](https://docs.python.org/3.7/tutorial/venv.html):
 `python3 -m venv option-pricing`
