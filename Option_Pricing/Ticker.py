@@ -9,7 +9,7 @@ class Ticker:
     """Class for fetcing data from yahoo finance."""
     
     @staticmethod
-    def get_historical_data(ticker, start_date=None, end_date=None, cache_data=True, cache_days=1):
+    def get_historical_data(ticker, start_date = None, end_date = None, cache_data = True, cache_days = 1):
         """
         Fetches stock data from yahoo finance. Request is by default cashed in sqlite db for 1 day.
         
@@ -17,13 +17,13 @@ class Ticker:
         ticker: ticker symbol
         start_date: start date for getting historical data
         end_date: end date for getting historical data
-        cache_date: flag for caching fetched data into slqite db
+        cache_date: flag for caching fetched data into sqlite db
         cache_days: number of days data will stay in cache 
         """
         try:
             # initializing sqlite for caching yahoo finance requests
-            expire_after = datetime.timedelta(days=1)
-            session = requests_cache.CachedSession(cache_name='cache', backend='sqlite', expire_after=expire_after)
+            expire_after = datetime.timedelta(days = 1)
+            session = requests_cache.CachedSession(cache_name = 'cache', backend = 'sqlite', expire_after = expire_after)
 
             # Adding headers to session
             session.headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0', 
@@ -87,7 +87,7 @@ class Ticker:
             plt.ylabel(f'{column_name}')
             plt.xlabel('Date')
             plt.title(f'Historical data for {ticker} - {column_name}')
-            plt.legend(loc='best')
+            plt.legend(loc = 'best')
             plt.show()
 
         except Exception as e:
