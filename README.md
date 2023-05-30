@@ -83,7 +83,7 @@ Link for your web app will be something like this: `https://project-name.ey.r.ap
 
 ### **2. Running Streamlit app locally with python**
 
-It is recommended that you create new [virtual environment](https://docs.python.org/3.7/tutorial/venv.html):
+It is recommended that you create new [virtual environment](https://docs.python.org/3.10/tutorial/venv.html):
 `python3 -m venv option-pricing`
 
 Then you would need to activate that newly created python environment:
