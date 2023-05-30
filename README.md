@@ -22,7 +22,7 @@ When data is fetched from Yahoo Finance API, it's cached with [request-cache](ht
 
 ## Streamlit web app
 
-1. Black-Scholes model. 
+1. Black-Scholes Option Pricing. 
 
 ![black-scholes-demo](./demo/streamlit-webapp-BS.gif) 
 
@@ -30,7 +30,7 @@ When data is fetched from Yahoo Finance API, it's cached with [request-cache](ht
 
 ![monte-carlo-demo](./demo/streamlit-webapp-MC.gif) 
 
-3. Binomial model. 
+3. Binomial Tree Option Pricing. 
 
 ![binomial-tree-demo](./demo/streamlit-webapp-BC.gif) 
 
