@@ -1,4 +1,4 @@
-# Option Pricing Models
+# Option Pricing Simulations
 
 ## Introduction
 
