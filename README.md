@@ -37,15 +37,15 @@ When data is fetched from Yahoo Finance API, it's cached with [request-cache](ht
 
 ## Project structure
 
-In this repository you will find:
-
-- demo directory - contains .gif files as example of streamlit app.
-- option_pricing package - python package where models are implemented.
-- option_pricing_test.py script - example code for testing option pricing models (without webapp).
-- streamlit_app.py script - web app for testing models using streamlit library.
-- Requirements.txt file - python pip package requirements.
-- Dockerfile file - for running containerized streamlit web app.
-- app.yaml file - for deploying dockerized app on GCP(Google Cloud Platform).
+| Files | Description |
+| ----------- | ----------- |
+| `demo` | contains .gif files as example of streamlit app. |
+| `option_pricing` | folder containing python packages where models are implemented. |
+| `option_pricing_test.py` | example code for testing option pricing models (without webapp). |
+| `streamlit_app.py` | web app for testing models using streamlit library. |
+| `Requirements.txt` | python pip package requirements. |
+| `Dockerfile` | for running containerized streamlit web app. |
+| `app.yaml` | for deploying dockerized app on GCP(Google Cloud Platform). |
 
 ## How to run code?
 
