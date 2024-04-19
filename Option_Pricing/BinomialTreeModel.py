@@ -16,8 +16,9 @@ class BinomialTreeModel(OptionPricingModel):
 
     def __init__(self, underlying_spot_price, strike_price, days_to_maturity, risk_free_rate, sigma, number_of_time_steps):
         """
-        Initializes variables used in Black-Scholes formula .
+        Initializes variables used in Black-Scholes formula.
 
+        Parameters:
         underlying_spot_price: current stock or other underlying spot price
         strike_price: strike price for option cotract
         days_to_maturity: option contract maturity/exercise date
@@ -35,8 +36,8 @@ class BinomialTreeModel(OptionPricingModel):
     def _calculate_call_option_price(self): 
         """Calculates price for call option according to the Binomial formula."""
         # Delta t, up and down factors
-        dT = self.T / self.number_of_time_steps                             
-        u = np.exp(self.sigma * np.sqrt(dT))                 
+        dT = self.T / self.number_of_time_steps  
+        u = np.exp(self.sigma * np.sqrt(dT))
         d = 1.0 / u                                    
 
         # Price vector initialization
